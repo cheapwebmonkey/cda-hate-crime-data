@@ -37,8 +37,8 @@ var handlers = {
         Request('https://csvjsonapi.azurewebsites.net/api/static/hatecrimecsv', function(error, response, body) {
             if (!error && response.statusCode == 200) {
                 jsonContent = JSON.parse(body);
-                HATECRIMES = jsonContent.HATECRIMES;
-                CRIMETYPE = jsonContent.CRIMETYPE;
+                HATECRIMES = jsonContent.BIAS_MOTIVATION_GROUP;
+                CRIMETYPE = jsonContent.CRIME_TYPE;
 
           }
             else {
@@ -48,18 +48,32 @@ var handlers = {
         this.emit('AMAZON.HelpIntent');
     },
 
-    'GethateCrimeIntent': function() {
+    'GetHateCrimeIntent': function() {
         var self = this;
 
                 if (HATECRIMES >= 0)
 
-                    self.emit( ':ask', 'The hate crimes are ' + HATECRIMES + '.',this.t('HELP_MESSAGE'));
+                    self.emit( ':ask', 'The hate crimes for Louisville are ' + HATECRIMES + '.',this.t('HELP_MESSAGE'));
 
              else {
                 self.emit('ErrorIntent');
             }
 
     },
+
+
+    'GeCrimeTypeIntent': function() {
+            var self = this;
+
+                if (CRIMETYPE >= 0)
+
+                    self.emit( ':ask', 'The crimes types for Louisville are ' + CRIMETYPE + '.',this.t('HELP_MESSAGE'));
+
+                 else {
+                    self.emit('ErrorIntent');
+                }
+
+        },
 
     'Unhandled': function() {
             this.emit('AMAZON.HelpIntent');
