@@ -34,7 +34,7 @@ var handlers = {
     'LaunchRequest': function() {
         var self = this;
 
-        Request('http://csvjsonapi.azurewebsites.net/api/static/hatecrimecsv', function(error, response, body) {
+        Request('https://csvjsonapi.azurewebsites.net/api/static/hatecrimecsv', function(error, response, body) {
             if (!error && response.statusCode == 200) {
                 jsonContent = JSON.parse(body);
                 HATECRIMES = jsonContent.HATECRIMES;
@@ -59,21 +59,6 @@ var handlers = {
                 self.emit('ErrorIntent');
             }
 
-    },
-
-
-    'GetActualMoveOutIntent': function() {
-        var self = this;
-                if (MOVEOUTS >= 0)
-                    self.emit(':ask', 'The move outs, month to date, are ' + MOVEOUTS + '.',this.t('HELP_MESSAGE'));
-
-                else if  (MOVEOUTS <= 0)
-
-                    self.emit( ':ask', 'The move outs, month to date, are ' + Math.abs(MOVEOUTS) + '.',this.t('HELP_MESSAGE'));
-
-             else {
-                self.emit('ErrorIntent');
-            }
     },
 
     'Unhandled': function() {
