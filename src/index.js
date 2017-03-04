@@ -34,7 +34,7 @@ var handlers = {
     'LaunchRequest': function() {
         var self = this;
 
-        Request('https://s3.amazonaws.com/', function(error, response, body) {
+        Request('http://csvjsonapi.azurewebsites.net/api/static/hatecrimecsv', function(error, response, body) {
             if (!error && response.statusCode == 200) {
                 jsonContent = JSON.parse(body);
                 HATECRIMES = jsonContent.HATECRIMES;
