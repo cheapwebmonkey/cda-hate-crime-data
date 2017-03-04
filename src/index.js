@@ -4,9 +4,9 @@
 process.env.UV_THREADPOOL_SIZE = 128;
 var Alexa = require('alexa-sdk');
 var Request = require("request");
-var APP_ID = 'addappidhere';
-var HATECRIMES = 0;
-var CRIMETYPE = 0;
+var APP_ID = 'amzn1.ask.skill.ad4a89d4-3d89-4e0f-8e92-ea90e84e6ed1';
+var HATECRIMES = "";
+var CRIMETYPE = "";
 var jsonContent = {};
 
 var languageStrings = {
@@ -62,7 +62,7 @@ var handlers = {
     },
 
 
-    'GeCrimeTypeIntent': function() {
+    'GetCrimeTypeIntent': function() {
             var self = this;
 
                 if (CRIMETYPE >= 0)
