@@ -1,0 +1,15 @@
+{
+  "name": "alexa-louisville-hate-crimes",
+  "version": "1.0.0",
+  "description": "MVP for grabbing hate crime data for Louisville",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Lee Early, Margeaux Spring, John Peck, Amy Shah, Lukas Armstrong, Tina Maddox",
+  "license": "MIT",
+  "dependencies": {
+    "alexa-sdk": "^1.0.7",
+    "request": "^2.79.0",
+  }
+}
