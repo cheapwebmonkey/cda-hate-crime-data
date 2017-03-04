@@ -1,0 +1,19 @@
+{
+  "intents": [
+    {
+      "intent": "GetHateCrimesZipIntent"
+    },
+    {
+      "intent": "GetTotalHateCrimesIntent"
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    }
+  ]
+}
